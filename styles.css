@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+p {
+    text-transform: uppercase;
+    color: green;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 15px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.container{
+    width: 100%;
+    background: linear-gradient(135deg, #b3bac7, #dfa3ee);
+    padding: 10px;
+}
+
+.uffgabe-app {
+    color: white;
+    width: 100%;
+    max-width: 540px;
+    background: #000000;
+    margin: 20px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.uffgabe-app h2 {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.uffgabe-app h2 img {
+    width: 60px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #161616;
+    border-radius: 10px;
+    padding-left: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+input {
+    color: white;
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5980;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(img/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #ffffff;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(img/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #ff5980;
+}
+
+body {
+    background-color: black;
+    font-family: sans-serif;
+}
+
+.schattenmitfarbverlauf {
+    width: 570px;
+    margin: 50px auto;
+    background: linear-gradient(0deg, #000, #333);
+    position: relative;
+}
+
+.schattenmitfarbverlauf:before,
+.schattenmitfarbverlauf:after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(45deg, red, orange, yellow, 
+       green, blue, indigo, violet);
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);  
+    top: -2px;
+    left: -2px;
+    background-size: 500%;
+    animation: wandernderFarbverlauf 30s linear infinite;
+}
+
+.schattenmitfarbverlauf:after {
+    filter: blur(25px);
+}
+
+@keyframes wandernderFarbverlauf {
+    0%   { background-position: 0 0 }
+    50%  { background-position: 500% 0 }
+    100% { background-position: 0 0 }
+}
